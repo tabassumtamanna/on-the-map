@@ -96,10 +96,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         SignupViaWebsiteButton.isEnabled = !loggingIn
     }
     
+    // MARK: - Text Field Should Return
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
+    }
+    
     // MARK: - Keyboard Will Show
     @objc func keyboardWillShow(_ notification: Notification){
         if(view.frame.origin.y == 0 ){
-            view.frame.origin.y = -getKeyboardHight(notification)
+            view.frame.origin.y = -getKeyboardHight(notification) + 65
         }
     }
     

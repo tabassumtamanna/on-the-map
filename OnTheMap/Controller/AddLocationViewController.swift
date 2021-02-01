@@ -28,6 +28,18 @@ class AddLocationViewController: UIViewController, UITextFieldDelegate {
         mediaLinkTextField.delegate = self
     }
     
+    // MARK: - View Will Appear
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        subscribeToKeyboardNotifications()
+    }
+    
+    // MARK: - View Will Disappear
+    override func viewWillDisappear(_ animated: Bool) {
+
+        super.viewWillDisappear(animated)
+        unsubscribeFromKeyboardNotifications()
+    }
 
     // MARK: - Find Location
     @IBAction func findLocation(_ sender: Any) {
@@ -114,6 +126,47 @@ class AddLocationViewController: UIViewController, UITextFieldDelegate {
         self.locationTextField.isEnabled = !isFindLocation
         self.mediaLinkTextField.isEnabled = !isFindLocation
         self.findLocationButton.isEnabled  = !isFindLocation
+    }
+    
+    // MARK: - Text Field Should Return
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
+    }
+    
+    // MARK: - Keyboard Will Show
+    @objc func keyboardWillShow(_ notification: Notification){
+        if(view.frame.origin.y == 0 ){
+            view.frame.origin.y = -getKeyboardHight(notification) + 95
+        }
+    }
+    
+    // MARK: - Keyboard Will Hide
+    @objc func keyboardWillHide(_ notification: Notification){
+        view.frame.origin.y = 0
+    }
+    
+    // MARK: - Get Keyboard Hight
+    func  getKeyboardHight(_ notification: Notification) -> CGFloat{
+        
+        let userInfo = notification.userInfo
+        let keyboredSize =  userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
+        
+        return keyboredSize.cgRectValue.height
+    }
+    
+    // MARK: - Subscribe TO keyboard Notifications
+    func subscribeToKeyboardNotifications() {
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    // MARK: - Unsubscribe TO keyboard Notifications
+    func unsubscribeFromKeyboardNotifications() {
+
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
         
 }
