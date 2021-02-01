@@ -107,7 +107,7 @@ class StudentMapViewController: UIViewController, MKMapViewDelegate {
                 
                 UIApplication.shared.open(URL(string: toOpen)!, options: [:], completionHandler: nil)
             } else {
-                showFailureMessage(title: "Invalid Link", message: "Can not open the link")
+                showFailureMessage(title: "Invalid Link", message: "This is not a valid link. Try another one.")
             }
             
         }

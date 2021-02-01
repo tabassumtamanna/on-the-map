@@ -96,7 +96,7 @@ extension StudentlistViewController: UITableViewDataSource, UITableViewDelegate 
             
             UIApplication.shared.open(URL(string: student.mediaURL)!, options: [:], completionHandler: nil)
         } else {
-            showFailureMessage(title: "Invalid Link", message: "Can't open the link")
+            showFailureMessage(title: "Invalid Link", message: "This is not a valid link. Try another one.")
         }
         
     }

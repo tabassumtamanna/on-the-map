@@ -16,7 +16,6 @@
 		E9AF19AE25BEA55900FFC6F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9AF19AC25BEA55900FFC6F6 /* LaunchScreen.storyboard */; };
 		E9AF19BF25BF6F4B00FFC6F6 /* OnTheMapUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF19BE25BF6F4B00FFC6F6 /* OnTheMapUser.swift */; };
 		E9AF19C325BF717A00FFC6F6 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF19C225BF717A00FFC6F6 /* LoginRequest.swift */; };
-		E9AF19C725BF71A400FFC6F6 /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF19C625BF71A400FFC6F6 /* LogoutRequest.swift */; };
 		E9AF19CD25BF75C900FFC6F6 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF19CC25BF75C900FFC6F6 /* LoginResponse.swift */; };
 		E9AF19D225BFBF2300FFC6F6 /* StudentlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF19D125BFBF2300FFC6F6 /* StudentlistViewController.swift */; };
 		E9AF19D525BFC4A700FFC6F6 /* StudentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF19D425BFC4A700FFC6F6 /* StudentInfo.swift */; };
@@ -43,7 +42,6 @@
 		E9AF19AF25BEA55900FFC6F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9AF19BE25BF6F4B00FFC6F6 /* OnTheMapUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMapUser.swift; sourceTree = "<group>"; };
 		E9AF19C225BF717A00FFC6F6 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
-		E9AF19C625BF71A400FFC6F6 /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
 		E9AF19CC25BF75C900FFC6F6 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		E9AF19D125BFBF2300FFC6F6 /* StudentlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentlistViewController.swift; sourceTree = "<group>"; };
 		E9AF19D425BFC4A700FFC6F6 /* StudentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfo.swift; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				E9AF19C225BF717A00FFC6F6 /* LoginRequest.swift */,
-				E9AF19C625BF71A400FFC6F6 /* LogoutRequest.swift */,
 				E9AF19FE25C3ACE800FFC6F6 /* PostingLocationRequest.swift */,
 			);
 			path = "OnTheMap Requests";
@@ -244,7 +241,6 @@
 				E9AF1A1325C4FD8000FFC6F6 /* UIViewController+Extension.swift in Sources */,
 				E9AF19A625BEA55800FFC6F6 /* LoginViewController.swift in Sources */,
 				E9AF19E725C0E86600FFC6F6 /* StudentMapViewController.swift in Sources */,
-				E9AF19C725BF71A400FFC6F6 /* LogoutRequest.swift in Sources */,
 				E9AF19D525BFC4A700FFC6F6 /* StudentInfo.swift in Sources */,
 				E9AF1A0325C3AFCD00FFC6F6 /* PostingLocationResponse.swift in Sources */,
 				E9AF19F325C2678D00FFC6F6 /* LocationConfirmationViewController.swift in Sources */,
