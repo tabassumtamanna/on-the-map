@@ -13,6 +13,7 @@ class LocationConfirmationViewController: UIViewController, MKMapViewDelegate {
 
     // MARK: - Outlet
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var finishButton: UIButton!
     
     // MARK: - variables
     var latitude: Float = 0.0
@@ -84,12 +85,17 @@ class LocationConfirmationViewController: UIViewController, MKMapViewDelegate {
     
     // MARK: - Add Location
     @IBAction func addLocation(_ sender: Any){
+        
+        //disable the finish button
+        self.finishButton.isEnabled = false
+        
         //getting public user data
         OnTheMapUser.getPublicUserData(completion: handleUserDataResponse(firstName:lastName:error:))
     }
      
     // MARK: - Handle User Data Response
     func handleUserDataResponse(firstName: String?, lastName: String?, error: Error?){
+        
         if(error == nil){
             
             self.firstName = firstName!
@@ -99,14 +105,21 @@ class LocationConfirmationViewController: UIViewController, MKMapViewDelegate {
             OnTheMapUser.postingStudentLocation(firstName: firstName!, lastName: lastName!, mapString: self.location, mediaURL: self.mediaURL, latitude: self.latitude, longitude: self.longitude, completion: handlePostingLocationResponse(success:error:))
             
         } else {
+            
             //show error message when posting location is failed
             showFailureMessage(title: "Posting Failure", message: error?.localizedDescription ?? "")
+            
+            //enable the finish button
+            self.finishButton.isEnabled = true
         }
         
     }
     
     // MARK: - Handle Posting Location Response
     func handlePostingLocationResponse(success: Bool, error: Error?){
+        
+        //enable the finish button
+        self.finishButton.isEnabled = true
         
         if success {
             //dismiss the view

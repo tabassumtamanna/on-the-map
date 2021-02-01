@@ -186,7 +186,7 @@ class OnTheMapUser {
         if let xsrfCookie = xsrfCookie {
           request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
         }
-        //let session = URLSession.shared
+        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             Auth.uniqueKey = ""
             completion()
